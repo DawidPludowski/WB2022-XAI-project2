@@ -38,4 +38,15 @@ pip install -r requirements.txt
 %load_ext lab_black
 ```
 
+* to work with gitflow:
+  * work only on `feature`/`hotfixes` branches
+  * upload to `develop` after finishing `feature`
+  * ask others before release to `master`
+
+```
+git flow init [start gitflow]
+git flow feature start branch_name [start branch]
+git flow feature finish branch_name [end branch and merge to develop]
+```
+
 * do not upload `.csv` files to repository;
