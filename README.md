@@ -13,14 +13,16 @@ https://www.kaggle.com/camnugent/california-housing-prices
 ## File structure
 
 ```
+
 ├── notebooks - all notebooks (.ipynb)
 ├── presentation - presentation files (.html, .ipynb)
 │   └── resources
 ├── README.md
 ├── requirements.txt
-└── resources
-    ├── data - unprocessed and processed data (.csv)
-    └── models - models saved in .pkl format
+├── resources
+|   ├── data - unprocessed and processed data (.csv)
+|   └── models - models saved in .pkl format
+└── scripts - functions/classes from notebooks (in .py)
 ```
 
 ## Usage
