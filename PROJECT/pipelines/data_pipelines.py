@@ -69,14 +69,14 @@ def _onehot_power() -> Pipeline:
     pipeline = Pipeline(
         [("onehot", _onehot_pipeline().pipeline), ("power", PowerTransformer())]
     )
-    return PipelineWrapper(pipeline, "onehot + power transformation")
+    return PipelineWrapper(pipeline, "onehot_power_transformation")
 
 
 def _ordinal_power() -> Pipeline:
     pipeline = Pipeline(
         [("ordinal", _ordinal_pipeline().pipeline), ("power", PowerTransformer())]
     )
-    return PipelineWrapper(pipeline, "ordinal + power transformation")
+    return PipelineWrapper(pipeline, "ordinal_power_transformation")
 
 
 def get_data_pipelines() -> list:

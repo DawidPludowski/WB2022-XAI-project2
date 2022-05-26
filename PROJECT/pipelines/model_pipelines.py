@@ -1,8 +1,4 @@
 import os
-import sys
-
-sys.path.append("../")
-os.chdir("../")
 
 from sklearn.neural_network import MLPRegressor
 from sklearn.pipeline import Pipeline
@@ -11,7 +7,7 @@ import pandas as pd
 import pickle as pkl
 
 from data_pipelines import get_data_pipelines
-from config import raw_data_full_path, model_path, mlp_hyperparams
+from config import train_data_full_path, model_path, models_params
 
 
 def create_model(
@@ -35,15 +31,18 @@ def create_model(
 def main():
     wrappers = get_data_pipelines()
 
+    os.chdir("PROJECT")
+
     for wrapper in wrappers:
-        print(f"fitting {wrapper.name}")
-        create_model(
-            raw_data_full_path,
-            wrapper.pipeline,
-            os.path.join(model_path, (wrapper.name + ".pkl")),
-            MLPRegressor(**mlp_hyperparams),
-            "median_house_value",
-        )
+        for name, model in models_params.items():
+            print(f"fitting {name} + {wrapper.name}")
+            create_model(
+                train_data_full_path,
+                wrapper.pipeline,
+                os.path.join(model_path, (name + "_" + wrapper.name + ".pkl")),
+                model["model"](**model["params"]),
+                "median_house_value",
+            )
 
 
 if __name__ == "__main__":
