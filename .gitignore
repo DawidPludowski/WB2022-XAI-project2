@@ -2,3 +2,7 @@
 *__pycache__*
 /resources/data/*
 __pycache__
+PROJECT/notebooks/.ipynb_checkpoints/model_summary-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/CP-Profiles-checkpoint.ipynb
+PROJECT/notebooks/.ipynb_checkpoints/explaining-checkpoint.ipynb
+PROJECT/notebooks/.ipynb_checkpoints/preprocessing-checkpoint.ipynb
